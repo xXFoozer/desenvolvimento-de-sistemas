@@ -6,17 +6,4 @@ export default function exercicio19() {
     for (let i = 0; i <= numeroDigitado; i++) {
         console.log(i);
     }
-
-
-    let i = 0;
-    let controle = true;
-    while (controle) {
-        if (i <= numeroDigitado) {
-            console.log(i);
-            i++
-        } else {
-            controle = false;
-        }
-    }
-
 }
