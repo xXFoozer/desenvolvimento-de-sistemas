@@ -6,10 +6,3 @@
     row-gap: 8px;
 }
 
-.item{
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    font-size: 18px;
-    border: 1px solid #444;
-}
