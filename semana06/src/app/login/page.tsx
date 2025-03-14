@@ -45,7 +45,10 @@ export default function login() {
                 />
 
                 <button
-                    className="button" onClick={handleSubmit} disabled ={!email || !password}>
+                    className="button"
+                    onClick={handleSubmit}
+                    disabled ={!email || !(password.length >= 6)}
+                >
                     Entrar
                 </button>
             </div>
