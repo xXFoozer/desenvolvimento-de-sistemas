@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Post from '@/components/Post'
 import Header from '@/components/Header'
 import Avatar from '@/components/Avatar'
-import cover from "@/assets/ingmar-h-5JMcV5AACP0-unsplash.jpg"
+import cover from "@/assets/tolga-ahmetler-kTZHJT7OO-I-unsplash.jpg"
 import Button from '@/components/Button'
 
 export default function Feed() {
@@ -22,7 +22,7 @@ export default function Feed() {
                         <span>Programador Junior</span>
 
                        
-                        <Button/>
+                        <Button component='editar perfil' />
                     </div>
 
                 </aside>

@@ -54,7 +54,7 @@ export default function Post({ post }: PostProps) {
 
                 <textarea placeholder='Deixe um comentário'/>
 
-                <Button/>
+                <Button component='Deixe um comentario'/>
             </form>
 
         </article>
