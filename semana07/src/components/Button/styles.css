@@ -1,0 +1,18 @@
+.button-edit-profile{
+    background-color: transparent;
+    color: #00875f;
+    border: 1px solid #00875f;
+    border-radius: 8px;
+    padding: 16px 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.button-edit-profile:hover{
+    color: #fff;
+    background-color: #00875f;
+    cursor: pointer;
+}

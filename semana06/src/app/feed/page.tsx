@@ -16,7 +16,7 @@ export default function Feed() {
 
                     <div className='profile'>
                         <Avatar src='https://github.com/xXFoozer.png' hasBorder={true} />
-                        <strong>Germano Rodrigues Gomes</strong>
+                        <strong>Germano R. Gomes</strong>
                         <span>Programador Junior</span>
                     </div>
 
