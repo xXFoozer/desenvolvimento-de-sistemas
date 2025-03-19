@@ -1,6 +1,10 @@
+'use client'
 import './styles.css'
 import Avatar from '../Avatar'
 import Button from '../Button'
+import { FormEvent, useState } from 'react'
+import { format, formatDistance, formatDistanceToNow } from 'date-fns'
+import { ptBR } from 'date-fns/locale'
 
 type Author = {
     name: string
@@ -19,42 +23,58 @@ type Author = {
 
 type PostProps = {
     post: {
+        id:number;
         author: Author;
         publishedAt: Date;
         content: string;
     }
 }
 
+
 export default function Post({ post }: PostProps) {
 
+    const [newComment, setNewComment] = useState<string>('')
 
+    function handleCreateNewComment(event: FormEvent) {
+        event.preventDefault()
+        alert(newComment)
+    }
+
+    const dateFormat = formatDistanceToNow(post.publishedAt, {
+        locale: ptBR,
+        addSuffix: true
+    })
 
     return (
         <article className='post'>
             <header>
                 <div className='author'>
-                    <Avatar src='https://github.com/xXFoozer.png' hasBorder={true} />
+                    <Avatar src={post.author.avatarUrl} hasBorder={true} />
                     <div className='author-infos'>
-                        <strong>Germano R. Gomes</strong>
-                        <span>Programador Junior</span>
+                        <strong>{post.author.name}</strong>
+                        <span>{post.author.role}</span>
                     </div>
                 </div>
 
                 <time>
-                    Publicado há 1h
+                    {dateFormat}
                 </time>
             </header>
 
             <div className='content'>
-                <p>O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro. Este texto não só sobreviveu 5 séculos, mas também o salto para a tipografia electrónica, mantendo-se essencialmente inalterada. Foi popularizada nos anos 60 com a disponibilização das folhas de Letraset, que continham passagens com Lorem Ipsum, e mais recentemente com os programas de publicação como o Aldus PageMaker que incluem versões do Lorem Ipsum</p>
+                <p>{post.content}</p>
             </div>
 
-            <form className='form'>
+            <form className='form' onSubmit={handleCreateNewComment}>
                 <strong>Deixe um Comentário</strong>
 
-                <textarea placeholder='Deixe um comentário'/>
 
-                <Button component='Deixe um comentario'/>
+                <textarea
+                    placeholder='Deixe um comentário'
+                    value={newComment}
+                    onChange={(e) => setNewComment(e.target.value)} />
+
+                <Button component='Publicar' />
             </form>
 
         </article>

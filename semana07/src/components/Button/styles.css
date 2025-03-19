@@ -1,4 +1,4 @@
-.button-edit-profile{
+.button{
     background-color: transparent;
     color: #00875f;
     border: 1px solid #00875f;
@@ -9,11 +9,19 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    margin-top: 8px;
+    margin-top: 16px;
 }
 
-.button-edit-profile:hover{
+.button:not(:disabled):hover{
     color: #fff;
     background-color: #00875f;
     cursor: pointer;
 }
+.button:disabled{
+    background-color: #c4c4c4;
+    cursor: not-allowed;
+    color: #fff;
+    opacity: 0.7;
+}
+
+
