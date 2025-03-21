@@ -1,14 +1,15 @@
 'use client'
 import './styles.css'
 import Image from 'next/image'
+import axios, { Axios } from 'axios'
 import Post from '@/components/Post'
+import Button from '@/components/Button'
 import Header from '@/components/Header'
 import Avatar from '@/components/Avatar'
 import { LuPencilLine } from "react-icons/lu";
 import cover from "@/assets/tolga-ahmetler-kTZHJT7OO-I-unsplash.jpg"
 import { FormEvent, useEffect, useState } from 'react'
-import axios, { Axios } from 'axios'
-import Button from '@/components/Button'
+import TextareaCustom from '@/components/TextareaCustom'
 
 
 
@@ -23,10 +24,12 @@ export default function Feed() {
 
     async function loadPost() {
         const response = await axios.get("http://localhost:3001/posts")
-       
-        const postSort = response.data.sort((a, b) => new Date(a.publishedAt) - new Date(b.publishedAt))
+        
+        const postSort = response.data.sort((a: any, b: any) => (
+            new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+        ))
 
-        setPosts(response.data)
+        setPosts(postSort)
     }
 
     async function handleCreatePost(event: FormEvent) {
@@ -75,13 +78,10 @@ export default function Feed() {
                 <div></div>
 
                 <main className='main'>
-                    <form onSubmit={handleCreatePost}>
-                        <textarea placeholder='O que vc ta pensando? '
-                            value={content}
-                            onChange={(e) => setContent(e.target.value)}
-                        />
+                    <form onSubmit={handleCreatePost} className='form-post'>
+                        <TextareaCustom message={content} setMessage={setContent} title='O que você esta pensando ?'/>
 
-                        <Button component="publicar" />
+                        <Button component="Publicar" />
 
                     </form>
                     {posts.map(item => (

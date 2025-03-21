@@ -1,7 +1,7 @@
 {
   "posts": [
     {
-      "id": 1,
+      "id": "1",
       "author": {
         "name": "Alice Silva",
         "role": "Desenvolvedora Front-end",
@@ -11,7 +11,7 @@
       "content": "Hoje compartilhei algumas dicas sobre React no meu blog! Falei sobre como utilizar hooks personalizados para gerenciar estado de forma eficiente e evitar repetições de código. Também mencionei a importância da organização dos componentes e como utilizar o Context API para melhorar a comunicação entre eles. Confira o post completo no meu site!"
     },
     {
-      "id": 2,
+      "id": "2",
       "author": {
         "name": "Carlos Souza",
         "role": "Engenheiro de Software",
@@ -21,7 +21,7 @@
       "content": "Trabalhando em um projeto incrível com NestJS e WebSockets. Estou desenvolvendo um sistema de notificações em tempo real para uma plataforma de colaboração, onde os usuários recebem atualizações instantâneas sobre novas mensagens, tarefas concluídas e menções em comentários. O uso de WebSockets tem sido essencial para garantir uma experiência fluida e eficiente."
     },
     {
-      "id": 3,
+      "id": "3",
       "author": {
         "name": "Mariana Oliveira",
         "role": "UX Designer",
@@ -31,7 +31,7 @@
       "content": "Design de interfaces pensando na acessibilidade é essencial! Recentemente, realizei uma pesquisa sobre como melhorar a experiência de navegação para pessoas com deficiência visual e auditiva. Implementamos melhorias como contraste adequado, suporte a leitores de tela e navegação por teclado. Pequenas mudanças podem fazer uma grande diferença na inclusão digital!"
     },
     {
-      "id": 4,
+      "id": "4",
       "author": {
         "name": "Lewis Clark",
         "role": "Full stack",
@@ -42,8 +42,18 @@
     },
     {
       "id": 5,
-      "content": "teste",
-      "publishedAt": "2025-03-19T00:50:52.809Z",
+      "content": "teste\n",
+      "publishedAt": "2025-03-20T22:25:11.536Z",
+      "author": {
+        "name": "Germano Gomes",
+        "role": "Programador Junior",
+        "avatarUrl": "https://github.com/xXFoozer.png"
+      }
+    },
+    {
+      "id": 6,
+      "content": "testtete",
+      "publishedAt": "2025-03-20T23:51:02.719Z",
       "author": {
         "name": "Germano Gomes",
         "role": "Programador Junior",

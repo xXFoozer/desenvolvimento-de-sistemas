@@ -5,6 +5,8 @@ import Button from '../Button'
 import { FormEvent, useState } from 'react'
 import { format, formatDistance, formatDistanceToNow } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
+import TextareaCustom from '../TextareaCustom'
+import axios from 'axios'
 
 type Author = {
     name: string
@@ -23,7 +25,7 @@ type Author = {
 
 type PostProps = {
     post: {
-        id:number;
+        id: number;
         author: Author;
         publishedAt: Date;
         content: string;
@@ -35,9 +37,24 @@ export default function Post({ post }: PostProps) {
 
     const [newComment, setNewComment] = useState<string>('')
 
-    function handleCreateNewComment(event: FormEvent) {
+    async function handleCreateNewComment(event: FormEvent) {
         event.preventDefault()
         alert(newComment)
+
+        const comment = {
+            comment: newComment,
+            publishedAt: new Date().toString(),
+            author: {
+                name: "Germano Gomes",
+                role: "Dev Junior",
+                avatarUrl: "http://github.com/xXFoozer.png"
+            }
+        }
+
+        await axios.patch(`http://localhost:3001/posts/${post.id}`, {
+            comments: comment
+        })
+
     }
 
     const dateFormat = formatDistanceToNow(post.publishedAt, {
@@ -69,10 +86,11 @@ export default function Post({ post }: PostProps) {
                 <strong>Deixe um Comentário</strong>
 
 
-                <textarea
-                    placeholder='Deixe um comentário'
-                    value={newComment}
-                    onChange={(e) => setNewComment(e.target.value)} />
+                <TextareaCustom
+                    message={newComment}
+                    setMessage={setNewComment}
+                    title='Deixe um comentário'
+                />
 
                 <Button component='Publicar' />
             </form>
