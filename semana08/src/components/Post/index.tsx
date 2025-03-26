@@ -2,11 +2,13 @@
 import './styles.css'
 import Avatar from '../Avatar'
 import Button from '../Button'
-import { Dispatch, FormEvent, SetStateAction, useState } from 'react'
-import { format, formatDistance, formatDistanceToNow } from 'date-fns'
+import Comment from '../Comment'
 import { ptBR } from 'date-fns/locale'
 import TextareaCustom from '../TextareaCustom'
+import { Dispatch, FormEvent, SetStateAction, useState } from 'react'
+import { format, formatDistance, formatDistanceToNow } from 'date-fns'
 import axios from 'axios'
+import { v4 as uuid } from 'uuid'
 
 type Author = {
     name: string
@@ -16,6 +18,7 @@ type Author = {
 
 type Comment = {
     id: string;
+    like: number;
     author: Author;
     comment: string;
     publishedAt: Date;
@@ -54,8 +57,10 @@ export default function Post({ post, setPost }: PostProps) {
         event.preventDefault()
 
         const comment = {
+            id: uuid(),
             comment: newComment,
             publishedAt: new Date().toString(),
+            like: 0,
             author: {
                 name: "Germano Gomes",
                 role: "Dev Junior",
@@ -71,6 +76,32 @@ export default function Post({ post, setPost }: PostProps) {
 
         loadComment()
         setNewComment(" ")
+    }
+
+    async function handleDeleteComment(event: MouseEvent, id: string) {
+        event.preventDefault();
+
+        const commentsFilter = post.comments.filter(comment => comment.id !== id);
+        await axios.patch(`http://localhost:3001/posts/${post.id}`, {
+            "comments": commentsFilter
+        })
+        loadComment()
+    }
+
+    async function handleLikeComment(event: MouseEvent, id: string) {
+        event.preventDefault();
+
+        const commentUpdated = post.comments.map(comment =>{
+            if(comment.id === id){
+                return { ...comment,like: comment.like +1}
+            }else{
+                return comment;
+            }
+        })
+        await axios.patch(`http://localhost:3001/posts/${post.id}`, {
+            "comments": commentUpdated
+        })
+        loadComment()
     }
 
     const dateFormat = formatDistanceToNow(post.publishedAt, {
@@ -110,13 +141,16 @@ export default function Post({ post, setPost }: PostProps) {
                 <Button component='Publicar' />
             </form>
 
-            <section className='comments'>
-                <ul>
-                    {post.comments?.length && post.comments.map(comment => (
-                        <li key={comment.comment}>{comment.comment}</li>
-                    ))}
-                </ul>
-            </section>
+
+
+            {post.comments?.length && post.comments.map(comment => (
+                <Comment key={comment.id} 
+                comment={comment} 
+                handleDelete={handleDeleteComment} 
+                handleLike={handleLikeComment} />
+            ))}
+
+
 
         </article>
     )

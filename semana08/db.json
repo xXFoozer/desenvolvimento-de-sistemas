@@ -8,18 +8,7 @@
         "avatarUrl": "https://github.com/benedettmanu.png"
       },
       "publishedAt": "2025-03-18T12:00:00Z",
-      "content": "Hoje compartilhei algumas dicas sobre React no meu blog! Falei sobre como utilizar hooks personalizados para gerenciar estado de forma eficiente e evitar repetições de código. Também mencionei a importância da organização dos componentes e como utilizar o Context API para melhorar a comunicação entre eles. Confira o post completo no meu site!",
-      "comments": [
-        {
-          "comment": "teste",
-          "publishedAt": "Mon Mar 24 2025 21:49:13 GMT-0300 (Horário Padrão de Brasília)",
-          "author": {
-            "name": "Germano Gomes",
-            "role": "Dev Junior",
-            "avatarUrl": "http://github.com/xXFoozer.png"
-          }
-        }
-      ]
+      "content": "Hoje compartilhei algumas dicas sobre React no meu blog! Falei sobre como utilizar hooks personalizados para gerenciar estado de forma eficiente e evitar repetições de código. Também mencionei a importância da organização dos componentes e como utilizar o Context API para melhorar a comunicação entre eles. Confira o post completo no meu site!"
     },
     {
       "id": "2",
@@ -29,18 +18,7 @@
         "avatarUrl": "https://github.com/marcuss83.png"
       },
       "publishedAt": "2025-03-17T15:30:00Z",
-      "content": "Trabalhando em um projeto incrível com NestJS e WebSockets. Estou desenvolvendo um sistema de notificações em tempo real para uma plataforma de colaboração, onde os usuários recebem atualizações instantâneas sobre novas mensagens, tarefas concluídas e menções em comentários. O uso de WebSockets tem sido essencial para garantir uma experiência fluida e eficiente.",
-      "comments": [
-        {
-          "comment": "teste",
-          "publishedAt": "Mon Mar 24 2025 19:27:59 GMT-0300 (Horário Padrão de Brasília)",
-          "author": {
-            "name": "Germano Gomes",
-            "role": "Dev Junior",
-            "avatarUrl": "http://github.com/xXFoozer.png"
-          }
-        }
-      ]
+      "content": "Trabalhando em um projeto incrível com NestJS e WebSockets. Estou desenvolvendo um sistema de notificações em tempo real para uma plataforma de colaboração, onde os usuários recebem atualizações instantâneas sobre novas mensagens, tarefas concluídas e menções em comentários. O uso de WebSockets tem sido essencial para garantir uma experiência fluida e eficiente."
     },
     {
       "id": "3",
@@ -50,18 +28,7 @@
         "avatarUrl": "https://github.com/niipvargas.png"
       },
       "publishedAt": "2025-03-16T10:15:00Z",
-      "content": "Design de interfaces pensando na acessibilidade é essencial! Recentemente, realizei uma pesquisa sobre como melhorar a experiência de navegação para pessoas com deficiência visual e auditiva. Implementamos melhorias como contraste adequado, suporte a leitores de tela e navegação por teclado. Pequenas mudanças podem fazer uma grande diferença na inclusão digital!",
-      "comments": [
-        {
-          "comment": " SLA3",
-          "publishedAt": "Mon Mar 24 2025 19:47:58 GMT-0300 (Horário Padrão de Brasília)",
-          "author": {
-            "name": "Germano Gomes",
-            "role": "Dev Junior",
-            "avatarUrl": "http://github.com/xXFoozer.png"
-          }
-        }
-      ]
+      "content": "Design de interfaces pensando na acessibilidade é essencial! Recentemente, realizei uma pesquisa sobre como melhorar a experiência de navegação para pessoas com deficiência visual e auditiva. Implementamos melhorias como contraste adequado, suporte a leitores de tela e navegação por teclado. Pequenas mudanças podem fazer uma grande diferença na inclusão digital!"
     },
     {
       "id": "4",
@@ -74,44 +41,33 @@
       },
       "comments": [
         {
-          "comment": "Germano R Gomes",
-          "publishedAt": "Mon Mar 24 2025 21:22:49 GMT-0300 (Horário Padrão de Brasília)",
+          "id": "35bcf66e-93c3-4f77-ab00-fe067ce1f32e",
+          "comment": "Hähnchen mit Schnurrbart",
+          "publishedAt": "Tue Mar 25 2025 20:56:41 GMT-0300 (Horário Padrão de Brasília)",
+          "like": 3,
           "author": {
             "name": "Germano Gomes",
             "role": "Dev Junior",
             "avatarUrl": "http://github.com/xXFoozer.png"
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "content": "Poste teste de teste",
+      "publishedAt": "2025-03-26T00:51:16.808Z",
+      "author": {
+        "name": "Germano Gomes",
+        "role": "Programador Junior",
+        "avatarUrl": "https://github.com/xXFoozer.png"
+      },
+      "comments": [
         {
-          "comment": " Gustavo Professor",
-          "publishedAt": "Mon Mar 24 2025 21:29:01 GMT-0300 (Horário Padrão de Brasília)",
-          "author": {
-            "name": "Germano Gomes",
-            "role": "Dev Junior",
-            "avatarUrl": "http://github.com/xXFoozer.png"
-          }
-        },
-        {
-          "comment": " Gatilho de gato\n",
-          "publishedAt": "Mon Mar 24 2025 21:29:14 GMT-0300 (Horário Padrão de Brasília)",
-          "author": {
-            "name": "Germano Gomes",
-            "role": "Dev Junior",
-            "avatarUrl": "http://github.com/xXFoozer.png"
-          }
-        },
-        {
-          "comment": " Germano R Gomes",
-          "publishedAt": "Mon Mar 24 2025 21:29:26 GMT-0300 (Horário Padrão de Brasília)",
-          "author": {
-            "name": "Germano Gomes",
-            "role": "Dev Junior",
-            "avatarUrl": "http://github.com/xXFoozer.png"
-          }
-        },
-        {
-          "comment": " T1",
-          "publishedAt": "Mon Mar 24 2025 21:30:09 GMT-0300 (Horário Padrão de Brasília)",
+          "id": "30fb6a9f-81e2-46b6-bc89-981cc6d52e04",
+          "comment": "1° comentario",
+          "publishedAt": "Tue Mar 25 2025 21:51:27 GMT-0300 (Horário Padrão de Brasília)",
+          "like": 12,
           "author": {
             "name": "Germano Gomes",
             "role": "Dev Junior",

@@ -80,26 +80,3 @@ time{
     outline:2px solid #008750;
 }
 
-.comments {
-    background-color: #202024;
-    border-radius: 8px;
-    padding: 8px;
-    margin-top: 10px;
-    color: #121214;
-}
-
-.comments ul{
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    padding: 16px;
-}
-
-.comments li{
-    padding: 16px;
-    background-color: #8d8d99;
-    border: 1px solid #202024;
-    border-radius: 8px;
-    gap: 16px;
-}
