@@ -1,0 +1,79 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "author": {
+        "name": "Alice Silva",
+        "role": "Desenvolvedora Front-end",
+        "avatarUrl": "https://github.com/benedettmanu.png"
+      },
+      "publishedAt": "2025-03-18T12:00:00Z",
+      "content": "Hoje compartilhei algumas dicas sobre React no meu blog! Falei sobre como utilizar hooks personalizados para gerenciar estado de forma eficiente e evitar repetições de código. Também mencionei a importância da organização dos componentes e como utilizar o Context API para melhorar a comunicação entre eles. Confira o post completo no meu site!"
+    },
+    {
+      "id": "2",
+      "author": {
+        "name": "Carlos Souza",
+        "role": "Engenheiro de Software",
+        "avatarUrl": "https://github.com/marcuss83.png"
+      },
+      "publishedAt": "2025-03-17T15:30:00Z",
+      "content": "Trabalhando em um projeto incrível com NestJS e WebSockets. Estou desenvolvendo um sistema de notificações em tempo real para uma plataforma de colaboração, onde os usuários recebem atualizações instantâneas sobre novas mensagens, tarefas concluídas e menções em comentários. O uso de WebSockets tem sido essencial para garantir uma experiência fluida e eficiente."
+    },
+    {
+      "id": "3",
+      "author": {
+        "name": "Mariana Oliveira",
+        "role": "UX Designer",
+        "avatarUrl": "https://github.com/niipvargas.png"
+      },
+      "publishedAt": "2025-03-16T10:15:00Z",
+      "content": "Design de interfaces pensando na acessibilidade é essencial! Recentemente, realizei uma pesquisa sobre como melhorar a experiência de navegação para pessoas com deficiência visual e auditiva. Implementamos melhorias como contraste adequado, suporte a leitores de tela e navegação por teclado. Pequenas mudanças podem fazer uma grande diferença na inclusão digital!"
+    },
+    {
+      "id": "4",
+      "content": "Post para Comentario",
+      "publishedAt": "2025-03-25T00:22:33.259Z",
+      "author": {
+        "name": "Germano Gomes",
+        "role": "Programador Junior",
+        "avatarUrl": "https://github.com/xXFoozer.png"
+      },
+      "comments": []
+    },
+    {
+      "id": "5",
+      "content": "Poste teste de teste",
+      "publishedAt": "2025-03-26T00:51:16.808Z",
+      "author": {
+        "name": "Germano Gomes",
+        "role": "Programador Junior",
+        "avatarUrl": "https://github.com/xXFoozer.png"
+      },
+      "comments": []
+    },
+    {
+      "id": "6",
+      "content": "teste dia 27/03/2025",
+      "publishedAt": "2025-03-27T21:49:48.582Z",
+      "author": {
+        "name": "Germano Gomes",
+        "role": "Programador Junior",
+        "avatarUrl": "https://github.com/xXFoozer.png"
+      },
+      "comments": [
+        {
+          "id": "8816f928-40da-43c5-8b1d-2b6c00f6bd5b",
+          "comment": "Teste confirmado",
+          "publishedAt": "Thu Mar 27 2025 18:49:58 GMT-0300 (Horário Padrão de Brasília)",
+          "like": 51,
+          "author": {
+            "name": "Germano Gomes",
+            "role": "Dev Junior",
+            "avatarUrl": "http://github.com/xXFoozer.png"
+          }
+        }
+      ]
+    }
+  ]
+}
