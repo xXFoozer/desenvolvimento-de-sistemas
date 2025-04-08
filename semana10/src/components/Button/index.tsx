@@ -11,7 +11,7 @@ export default function Button({component , handle} :ButtonProps){
     return (
         <div>
             <footer>
-                <button className='button' disabled ={false}>
+                <button className='button' disabled ={false} onClick={handle}>
                     {component}
                 </button>
             </footer>
