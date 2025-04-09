@@ -10,6 +10,10 @@ const config: Config = {
 
   clearMocks: true,
   collectCoverage: true,
+  collectCoverageFrom: [
+    'src/**/*.{ts,tsx}',
+    '!src/**/*.{test,spec}.{ts,tsx}'
+  ],
   coverageDirectory: "coverage",
   coverageProvider: "v8",
   testEnvironment: "jsdom",

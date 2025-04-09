@@ -39,19 +39,7 @@
         "role": "Programador Junior",
         "avatarUrl": "https://github.com/xXFoozer.png"
       },
-      "comments": [
-        {
-          "id": "35bcf66e-93c3-4f77-ab00-fe067ce1f32e",
-          "comment": "Hähnchen mit Schnurrbart",
-          "publishedAt": "Tue Mar 25 2025 20:56:41 GMT-0300 (Horário Padrão de Brasília)",
-          "like": 3,
-          "author": {
-            "name": "Germano Gomes",
-            "role": "Dev Junior",
-            "avatarUrl": "http://github.com/xXFoozer.png"
-          }
-        }
-      ]
+      "comments": []
     },
     {
       "id": "5",
@@ -62,12 +50,23 @@
         "role": "Programador Junior",
         "avatarUrl": "https://github.com/xXFoozer.png"
       },
+      "comments": []
+    },
+    {
+      "id": "6",
+      "content": "teste dia 27/03/2025",
+      "publishedAt": "2025-03-27T21:49:48.582Z",
+      "author": {
+        "name": "Germano Gomes",
+        "role": "Programador Junior",
+        "avatarUrl": "https://github.com/xXFoozer.png"
+      },
       "comments": [
         {
-          "id": "30fb6a9f-81e2-46b6-bc89-981cc6d52e04",
-          "comment": "1° comentario",
-          "publishedAt": "Tue Mar 25 2025 21:51:27 GMT-0300 (Horário Padrão de Brasília)",
-          "like": 12,
+          "id": "8816f928-40da-43c5-8b1d-2b6c00f6bd5b",
+          "comment": "Teste confirmado",
+          "publishedAt": "Thu Mar 27 2025 18:49:58 GMT-0300 (Horário Padrão de Brasília)",
+          "like": 50,
           "author": {
             "name": "Germano Gomes",
             "role": "Dev Junior",

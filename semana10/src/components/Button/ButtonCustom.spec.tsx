@@ -11,7 +11,7 @@ describe('Test button', () => {
         expect(button).toBeInTheDocument()
     })
 
-    it('deve renderizar o compo. e testar o click',()=>{
+    it('deve renderizar o componente e testar o click',()=>{
         const handleMock = jest.fn()
 
         render(<Button component='Publicar' handle={handleMock}/>)
