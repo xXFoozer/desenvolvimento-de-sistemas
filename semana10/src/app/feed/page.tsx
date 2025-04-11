@@ -17,24 +17,31 @@ export default function Feed() {
 
     const [posts, setPosts] = useState<any[]>([])
     const [content, setContent] = useState<string>('')
+    const [isLoading, setIsLoading] = useState<boolean>(true);
 
     useEffect(() => {
         loadPost()
     }, [])
 
     async function loadPost() {
-        const response = await axios.get("http://localhost:3001/posts")
-        
-        const postSort = response.data.sort((a: any, b: any) => (
-            new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-        ))
+        try {
+            setIsLoading(true)
+            const response = await axios.get("http://localhost:3001/posts")
+            const postSort = response.data.sort((a: any, b: any) => (
+                new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+            ))
+            setPosts(postSort)
+        } catch (e) {
+            alert('ERROR')
+        } finally {
+            setIsLoading(false)
+        }
 
-        setPosts(postSort)
     }
 
     async function handleCreatePost(event: FormEvent) {
         event.preventDefault()
-       
+
         const post = {
             id: String(posts.length + 1),
             content: content,
@@ -80,15 +87,19 @@ export default function Feed() {
 
                 <main className='main'>
                     <form onSubmit={handleCreatePost} className='form-post'>
-                        <TextareaCustom message={content} setMessage={setContent} title='O que você esta pensando ?'/>
+                        <TextareaCustom message={content} setMessage={setContent} title='O que você esta pensando ?' />
 
-                        <Button component="Publicar" handle={() =>{}}/>
+                        <Button component="Publicar post" handle={() => { }} />
 
                     </form>
-                    {posts.map(item => (
-                        <Post post={item} setPost={setPosts} key={item.id} />
+                    {isLoading ? (
+                        <h1>Carregando...</h1>
+                    ) : (
+                        posts.map(item => (
+                            <Post post={item} key={item.id} setPost={setPosts} />
+                        ))
+                    )}
 
-                    ))}
                 </main>
             </div>
         </div>

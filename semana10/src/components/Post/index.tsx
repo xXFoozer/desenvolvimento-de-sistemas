@@ -110,7 +110,7 @@ export default function Post({ post, setPost }: PostProps) {
     })
 
     return (
-        <article className='post'>
+        <article className='post' data-testid="post-test">
             <header>
                 <div className='author'>
                     <Avatar src={post.author.avatarUrl} hasBorder={true} />
@@ -138,7 +138,7 @@ export default function Post({ post, setPost }: PostProps) {
                     setMessage={setNewComment}
                     title='Deixe um comentário'
                 />
-                <Button component='Publicar' />
+                <Button component='Publicar'/>
             </form>
 
 
