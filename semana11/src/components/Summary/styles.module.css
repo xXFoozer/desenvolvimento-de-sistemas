@@ -1,0 +1,38 @@
+.container {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+    margin-top: -80px;
+}
+
+.card {
+    background-color: #323238;
+    border-radius: 6px;
+    padding: 32px;
+}
+
+.cardGreen {
+    background-color: #015f43;
+    border-radius: 6px;
+    padding: 32px;
+}
+
+
+.card header, .cardGreen header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #c4c4cc;
+    font-size: 18px;
+    margin-bottom: 16px;
+    font-weight: bold;
+}
+
+.card strong, .cardGreen strong{
+    font-size: 28px;
+    display: block;
+}
