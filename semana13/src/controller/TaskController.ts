@@ -24,7 +24,7 @@ export async function taskController(app: FastifyInstance) {
     app.get("/task/:id", (request: FastifyRequest, reply: FastifyReply) => {
         const { id } = request.params as { id: string };
         const task = taskService.getById(id);
-        return task;
+        return reply.code(200).send(task);
     })
 
     app.patch("/task/:id/completed", (request, reply) => {
@@ -50,14 +50,20 @@ export async function taskController(app: FastifyInstance) {
 
         try {
             const task = taskService.updateText(id, text)
-            return reply.code(200).send(text)
-            
+            return reply.code(200).send(task)
+
         } catch (error: any) {
-    
+
             return reply.code(404).send({ error: error.message })
         }
 
 
 
+    })
+
+    app.delete("/task/:id", (request: FastifyRequest, reply: FastifyReply) => {
+        const { id } = request.params as {id: string}
+        taskService.delete(id)
+        return reply.code(200).send();
     })
 }
