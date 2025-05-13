@@ -1,6 +1,7 @@
 import fastify from "fastify";
 import { taskController } from "./controller/TaskController";
 import cors from "@fastify/cors";
+import { userController } from "./controller/UserController";
 
 const app = fastify();
 
@@ -12,6 +13,7 @@ app.register(cors, {
 })
 
 app.register(taskController);
+app.register(userController);
 
 
 const PORT = 3333;
