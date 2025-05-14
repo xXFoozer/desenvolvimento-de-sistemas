@@ -1,6 +1,7 @@
 import { Task as TaskPrisma, User } from "@prisma/client";
 import { prisma } from "../prisma/client";
 import { compare, hash } from "bcryptjs";
+import { FastifyInstance } from "fastify";
 
 class UserService {
 
@@ -31,11 +32,9 @@ class UserService {
 
     }
 
-    public async login({ email, password }: LoginType): Promise<string | null> {
+    public async login({ email, password }: LoginType, app: FastifyInstance): Promise<string | null> {
 
-        const user = await prisma.user.findUnique({
-            where: { email: email }
-        })
+        const user = await prisma.user.findUnique({ where: { email: email } })
 
         if (!user) {
             throw new Error("Credenciais Inválidas !!!")
@@ -46,14 +45,16 @@ class UserService {
         if (!passowordIsValid) {
             throw new Error("Credenciais Inválidas !!!")
         }
-        
+
 
 
         return app.jwt.sign({
             id: user.id,
             name: user.name,
             email: user.email,
-            birthDate: user.birthDate
+            birthDate: user.birthDate,
+            createdAt: user.createdAt,
+            updatedAte: user.updatedAt
         })
     }
 }

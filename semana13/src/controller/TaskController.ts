@@ -1,8 +1,11 @@
 import { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
 import { taskService } from "../service/TaskService";
+import { createTaskScheme, generalTaskSchema } from "../config/schema/task.schema";
 
 export async function taskController(app: FastifyInstance) {
-    app.post("/task",async (request, reply) => {
+    app.addHook("onRequest", app.authenticate)
+
+    app.post("/task", {schema: createTaskScheme} ,async (request, reply) => {
         const body = request.body as { text: string };
 
         try {
@@ -13,26 +16,26 @@ export async function taskController(app: FastifyInstance) {
         }
     })
 
-    app.get("/task", async(_, reply) => {
+    app.get("/task", { schema: generalTaskSchema }, async (_, reply) => {
         const list = await taskService.getAll();
         return reply.code(200).send(list);
     })
 
-    app.patch("/task/:id/completed", async (request: FastifyRequest, reply: FastifyReply) => {
+    app.patch("/task/:id/completed", { schema: generalTaskSchema }, async (request: FastifyRequest, reply: FastifyReply) => {
         // CAPTURA INFORMAÇÃO
         const { id } = request.params as { id: string };
-        
+
         try {
             // RAPASSA INFO RECEBIDA E RECEBE INFORMAÇÃO PROCESSADA
             const task = await taskService.updateCompleted(id);
             // RETORNA UMA RESPONSE PARA QUEM CHAMOU A ROTA
             return reply.code(200).send(task);
-        }catch(error: any) {
-            return reply.code(404).send({ error: error.message})
+        } catch (error: any) {
+            return reply.code(404).send({ error: error.message })
         }
     });
 
-    app.delete('/task/:id',async(request: FastifyRequest,reply: FastifyReply)=>{
+    app.delete('/task/:id', { schema: generalTaskSchema }, async (request: FastifyRequest, reply: FastifyReply) => {
         const { id } = request.params as { id: string }
         await taskService.deleteTask(id);
         return reply.code(200).send()
