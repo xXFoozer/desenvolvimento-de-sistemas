@@ -10,7 +10,9 @@ declare module 'fastify'{
             birthDate: Date;
             createdAt: Date;
             updatedAt: Date;
-        },
+        }
+
+
         jwtVerify(): Promise<void>
     }
 

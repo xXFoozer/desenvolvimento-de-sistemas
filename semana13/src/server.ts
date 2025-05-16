@@ -6,6 +6,7 @@ import auth_jwt from "./middleware/auth_jwt";
 import fastifySwagger from "@fastify/swagger";
 import { swaggerConfig } from "./config/swaggerConfig";
 import fastifySwaggerUi from "@fastify/swagger-ui";
+import { tagController } from "./controller/TagController";
 
 const app = fastify();
 
@@ -19,10 +20,10 @@ app.register(cors, {
 app.register(fastifySwagger, swaggerConfig as any);
 app.register(fastifySwaggerUi, { routePrefix: '/docs', uiConfig: { docExpansion: 'list' } }),
 
-    app.register(auth_jwt);
+app.register(auth_jwt);
 app.register(taskController);
 app.register(userController);
-
+app.register(tagController);
 
 const PORT = 3333;
 app.listen({ port: PORT }).then(() => {
