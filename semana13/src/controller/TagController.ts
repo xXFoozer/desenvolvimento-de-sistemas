@@ -1,5 +1,5 @@
 import { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
-   import { tagService } from "../service/TagService";
+import { tagService } from "../service/TagService";
 
 export async function tagController(app: FastifyInstance) {
     app.addHook("onRequest", app.authenticate)
@@ -15,5 +15,16 @@ export async function tagController(app: FastifyInstance) {
         }
     })
 
-//Não equece do register no SERVER 
+    app.post("/tag/relation", async (request: FastifyRequest, reply: FastifyReply) => {
+        const { taskId, tagId } = request.body as { taskId: string, tagId: string };
+
+        try {
+            await tagService.relation(taskId, tagId);
+            return reply.code(201).send();
+        } catch (error: any) {
+            return reply.code(400).send({ erro: error.message })
+        }
+
+    })
+    //Não equece do register no SERVER 
 }

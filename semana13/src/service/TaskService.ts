@@ -1,5 +1,6 @@
 import { Task as TaskPrisma } from "@prisma/client";
 import { prisma } from "../prisma/client";
+import { text } from "stream/consumers";
 
 class TaskService {
 
@@ -20,10 +21,27 @@ class TaskService {
     }
 
     public async getAll(userId: string): Promise<TaskPrisma[]> {
-        return await prisma.task.findMany({
+        const tasks = await prisma.task.findMany({
             orderBy: { createdAt: 'desc' },
-            where: { userId: userId }
+            where: { userId: userId },
+            include: {
+                taskTag: {
+                    include: {
+                        tag: true
+                    }
+                }
+            }
         });
+
+        const tasksMap = tasks.map(task => ({
+            id: task.id,
+            text: task.text,
+            completed: task.completed,
+            userId: task.userId,
+            tags: task.taskTag.map(tag => tag.tag)
+        } as any))
+        return tasksMap
+
     }
 
 

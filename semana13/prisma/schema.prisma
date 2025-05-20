@@ -8,13 +8,14 @@ datasource db {
 }
 
 model Task {
-  id        String   @id
+  id        String    @id
   text      String
   completed Boolean
   createdAt DateTime
-  updatedAt DateTime @updatedAt
+  updatedAt DateTime  @updatedAt
   userId    String
-  user      User     @relation(fields: [userId], references: [id])
+  user      User      @relation(fields: [userId], references: [id])
+  taskTag   TaskTag[]
 
   @@map("tasks")
 }
@@ -33,8 +34,19 @@ model User {
 }
 
 model Tag {
-  id   String @id
-  name String
+  id      String    @id
+  name    String
+  taskTag TaskTag[]
 
   @@map("tags")
+}
+
+model TaskTag {
+  taskId String
+  tagId  String
+  task   Task   @relation(fields: [taskId], references: [id])
+  tag    Tag    @relation(fields: [tagId], references: [id])
+
+  @@id([taskId, tagId])
+  @@map("task_tag")
 }
